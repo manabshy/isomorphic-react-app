@@ -46,13 +46,13 @@ app.get('/api/questions/:id',function *(req,res){
     yield delay(150);
     res.json(data);
 });
-app.get(['/'], function *(req,res){
-    const data = yield getQuestions();
-    yield delay(150);
-    res.json(data);
-    let index = yield fs.readFile('./public/index.html',"utf-8");
-    res.send(index);
-});
+// app.get(['/'], function *(req,res){
+//     const data = yield getQuestions();
+//     yield delay(150);
+//     res.json(data);
+//     let index = yield fs.readFile('./public/index.html',"utf-8");
+//     res.send(index);
+// });
 
 if(process.env.NODE_ENV === 'development') {
     const config = require('../webpack.config.dev.babel.js').default;
@@ -69,6 +69,9 @@ if(process.env.NODE_ENV === 'development') {
     app.use(require('webpack-hot-middleware')(compiler));
 }
 
-
+app.get(['/'], function *(req,res){
+    let index = yield fs.readFile('./public/index.html',"utf-8");
+    res.send(index);
+});
 
 app.listen(port, '0.0.0.0', ()=>console.info(`Listening at http://localhost:${port}`));
