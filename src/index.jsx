@@ -16,5 +16,11 @@ const render = (_App)  =>{
         </Provider>,
         document.getElementById('AppContainer'));
 };
+if(module.hot) {
+    module.hot.accept('./App',()=> {
+        const NextApp = require('./App').default;
+        render(NextApp);
+    })
+}
 fetchDataStoreLocation();
 render(App);

@@ -4,7 +4,7 @@ import QuestionList from './components/QuestionList';
 const AppDisplay = ({test})=> (
     <div>
         <h1>
-            Stackoverflow Questions - Isomorphic
+           A List of Questions 
         </h1>
         <div>
             <QuestionList/>
