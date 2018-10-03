@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import  TagsList  from './TagsList';
 const QuestionListItem = ({title,tags}) => (
     <div className="mb-3">
         <h3>{title}</h3>
         <div className="mb-2">
-            {tags.join(',')}
+            <TagsList tags={tags}/>
         </div>
 
     </div>
