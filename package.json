@@ -5,7 +5,7 @@
   "main": "babel-test.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "cross-env NODE_ENV=development babel-node server --useLiveData=true --useServerRender=true"
+    "start-dev": "cross-env NODE_ENV=development babel-node server --useLiveData=false --useServerRender=false"
   },
   "keywords": [],
   "author": "",
@@ -34,6 +34,9 @@
   "devDependencies": {
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.4",
+    "react-markdown": "^2.5.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.6",
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.15.6"
   }
