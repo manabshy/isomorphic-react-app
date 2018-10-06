@@ -5,7 +5,9 @@
   "main": "babel-test.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "cross-env NODE_ENV=development babel-node server --useLiveData=false --useServerRender=false"
+    "start-dev": "cross-env NODE_ENV=development babel-node server --useLiveData=true --useServerRender=true",
+    "build": "cross-env webpack --config ./webpack.config.prod.babel.js",
+    "start-prod": "npm run build && cross-env NODE_ENV=production babel-node server --useLiveData=true --useServerRender=true"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +34,7 @@
     "webpack-hot-middleware": "^2.19.1"
   },
   "devDependencies": {
+    "history": "^4.7.2",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.4",
     "react-markdown": "^2.5.0",
